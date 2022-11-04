@@ -23,6 +23,17 @@
       "description": "skdfjs",
       "city": "dresden",
       "id": 8
+    },
+    {
+      "jobTitle": "Ruby on Rails Developer",
+      "description": "sdkjfskdjf",
+      "city": "hamburg",
+      "details": {
+        "remote": true,
+        "fullTime": true,
+        "largeCompany": true
+      },
+      "id": 9
     }
   ]
 }

@@ -45,15 +45,31 @@ function App() {
 
 	const handleFieldChange = (e: any, fieldName: string) => {
 		const value = e.target.value;
+		const checked = e.target.checked;
 		switch (fieldName) {
 			case 'jobTitle':
-				formData.jobTitle = value;
+				if (value === '/brr') {
+					formData.jobTitle = 'React Developer';
+					formData.city = 'berlin';
+					formData.details.remote = true;
+				} else {
+					formData.jobTitle = value;
+				}
 				break;
 			case 'description':
 				formData.description = value;
 				break;
 			case 'city':
 				formData.city = value;
+				break;
+			case 'remote':
+				formData.details.remote = checked;
+				break;
+			case 'fullTime':
+				formData.details.fullTime = checked;
+				break;
+			case 'largeCompany':
+				formData.details.largeCompany = checked;
 				break;
 		}
 		setFormData({ ...formData });
@@ -134,6 +150,9 @@ function App() {
 								<div>
 									<input
 										type="checkbox"
+										onChange={(e) =>
+											handleFieldChange(e, 'remote')
+										}
 										checked={formData.details.remote}
 									/>{' '}
 									remote
@@ -141,6 +160,9 @@ function App() {
 								<div>
 									<input
 										type="checkbox"
+										onChange={(e) =>
+											handleFieldChange(e, 'fullTime')
+										}
 										checked={formData.details.fullTime}
 									/>{' '}
 									full-time
@@ -148,6 +170,9 @@ function App() {
 								<div>
 									<input
 										type="checkbox"
+										onChange={(e) =>
+											handleFieldChange(e, 'largeCompany')
+										}
 										checked={formData.details.largeCompany}
 									/>{' '}
 									large company
