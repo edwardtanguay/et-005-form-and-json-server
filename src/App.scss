@@ -12,7 +12,18 @@ body {
 		font-size: 1.3rem;
 	}
 
+	.currentJobs {
+		.job {
+			margin-bottom: .5rem;
+			.delete {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+
 	form {
+
 		fieldset {
 			margin: 2em 2em 2em 0;
 			padding: 1.5em 2em 2em 2em;

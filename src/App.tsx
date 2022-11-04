@@ -53,6 +53,13 @@ function App() {
 		})();
 	};
 
+	const handleDeleteJob = (job: IJob) => {
+		(async () => {
+			const response = await axios.delete(`${backendUrl}/jobs/${job.id}`);
+			getJobs();
+		})();
+	};
+
 	return (
 		<div className="App">
 			<h1>Job Site</h1>
@@ -100,7 +107,16 @@ function App() {
 					{jobs.map((job) => {
 						return (
 							<div className="job" key={job.id}>
-								<div className="title">{job.jobTitle}</div>
+								<div className="title">
+									{job.jobTitle} (
+									<span
+										onClick={() => handleDeleteJob(job)}
+										className="delete"
+									>
+										delete
+									</span>
+									)
+								</div>
 							</div>
 						);
 					})}
