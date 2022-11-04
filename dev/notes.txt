@@ -1,15 +1,15 @@
 - x make "Save" button
 - x install json-server
-- .. create db.json
-	- fill with 2 jobs
+- x create db.json
+	- x fill with 2 jobs
+- .. set up package.json scripts
+	- frontend
+	- backend
+	- start
 - test with React Client
 	- test get
 	- test post
 	- test with Thunder Client
-- set up package.json scripts
-	- frontend
-	- backend
-	- start
 - make handleSaveButton function
 	- post to backend
 	- reload with GET
