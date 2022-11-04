@@ -2,17 +2,29 @@ import { useState, useEffect } from 'react';
 import './App.scss';
 import axios from 'axios';
 
+interface IDetails {
+	remote: boolean;
+	fullTime: boolean;
+	largeCompany: boolean;
+}
+
 interface IJob {
 	id: number;
 	jobTitle: string;
 	description: string;
 	city: string;
+	details: IDetails;
 }
 
 const _formData = {
 	jobTitle: '',
 	description: '',
 	city: '',
+	details: {
+		remote: false,
+		fullTime: false,
+		largeCompany: false,
+	},
 };
 
 const backendUrl = 'http://localhost:5557';
@@ -101,13 +113,45 @@ function App() {
 						<div className="row">
 							<label>City</label>
 							<div>
-								<select value={formData.city} onChange={(e) => handleFieldChange(e, 'city')}>
+								<select
+									value={formData.city}
+									onChange={(e) =>
+										handleFieldChange(e, 'city')
+									}
+								>
 									<option value="">(please choose)</option>
 									<option value="hamburg">Hamburg</option>
 									<option value="berlin">Berlin</option>
 									<option value="dresden">Dresden</option>
 									<option value="leipzig">Leipzig</option>
 								</select>
+							</div>
+						</div>
+
+						<div className="row">
+							<label>Details</label>
+							<div>
+								<div>
+									<input
+										type="checkbox"
+										checked={formData.details.remote}
+									/>{' '}
+									remote
+								</div>
+								<div>
+									<input
+										type="checkbox"
+										checked={formData.details.fullTime}
+									/>{' '}
+									full-time
+								</div>
+								<div>
+									<input
+										type="checkbox"
+										checked={formData.details.largeCompany}
+									/>{' '}
+									large company
+								</div>
 							</div>
 						</div>
 
