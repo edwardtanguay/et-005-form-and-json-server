@@ -3,17 +3,26 @@
     {
       "jobTitle": "PHP Developer",
       "description": "sdfkjsdf",
+      "city": "berlin",
       "id": 2
     },
     {
       "jobTitle": "Vue.js Developer",
       "description": "Requires vue.js skills.",
+      "city": "hamburg",
       "id": 5
     },
     {
       "jobTitle": "Ruby Developer",
       "description": "ksjdfksdfjdsf",
+      "city": "dresden",
       "id": 7
+    },
+    {
+      "jobTitle": "Kotlin Developer",
+      "description": "skdfjs",
+      "city": "dresden",
+      "id": 8
     }
   ]
 }

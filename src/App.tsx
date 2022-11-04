@@ -101,7 +101,8 @@ function App() {
 						<div className="row">
 							<label>City</label>
 							<div>
-								<select onChange={(e) => handleFieldChange(e, 'city')}>
+								<select value={formData.city} onChange={(e) => handleFieldChange(e, 'city')}>
+									<option value="">(please choose)</option>
 									<option value="hamburg">Hamburg</option>
 									<option value="berlin">Berlin</option>
 									<option value="dresden">Dresden</option>
