@@ -9,11 +9,19 @@ const _formData = {
 function App() {
 	const [formData, setFormData] = useState(_formData);
 
-	const handleFieldChange = (e:any, fieldName: string) => {
+	const handleFieldChange = (e: any, fieldName: string) => {
 		const value = e.target.value;
-		formData.jobTitle = value;
-		setFormData({...formData});
-	}
+
+		switch (fieldName) {
+			case 'jobTitle':
+				formData.jobTitle = value;
+				break;
+			case 'description':
+				formData.description = value;
+				break;
+		}
+		setFormData({ ...formData });
+	};
 
 	return (
 		<div className="App">
@@ -26,14 +34,26 @@ function App() {
 						<div className="row">
 							<label>Job Title</label>
 							<div>
-								<input value={formData.jobTitle} onChange={(e) => handleFieldChange(e, 'jobTitle')} type="text" />
+								<input
+									value={formData.jobTitle}
+									onChange={(e) =>
+										handleFieldChange(e, 'jobTitle')
+									}
+									type="text"
+								/>
 							</div>
 						</div>
 
 						<div className="row">
 							<label>Description</label>
 							<div>
-								<textarea />
+								<textarea
+									value={formData.description}
+									spellCheck="false"
+									onChange={(e) =>
+										handleFieldChange(e, 'description')
+									}
+								/>
 							</div>
 						</div>
 					</fieldset>
