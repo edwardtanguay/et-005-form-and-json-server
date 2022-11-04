@@ -15,6 +15,7 @@ body {
 	.currentJobs {
 		.job {
 			margin-bottom: .5rem;
+
 			.delete {
 				text-decoration: underline;
 				cursor: pointer;
@@ -36,6 +37,10 @@ body {
 			legend {
 				padding: 0 .25em;
 				color: rgb(200, 169, 110) !important;
+			}
+
+			.row:not(:first-of-type) {
+				margin-top: 1rem;
 			}
 
 			label {

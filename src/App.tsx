@@ -6,11 +6,13 @@ interface IJob {
 	id: number;
 	jobTitle: string;
 	description: string;
+	city: string;
 }
 
 const _formData = {
 	jobTitle: '',
 	description: '',
+	city: '',
 };
 
 const backendUrl = 'http://localhost:5557';
@@ -31,13 +33,15 @@ function App() {
 
 	const handleFieldChange = (e: any, fieldName: string) => {
 		const value = e.target.value;
-
 		switch (fieldName) {
 			case 'jobTitle':
 				formData.jobTitle = value;
 				break;
 			case 'description':
 				formData.description = value;
+				break;
+			case 'city':
+				formData.city = value;
 				break;
 		}
 		setFormData({ ...formData });
@@ -91,6 +95,18 @@ function App() {
 										handleFieldChange(e, 'description')
 									}
 								/>
+							</div>
+						</div>
+
+						<div className="row">
+							<label>City</label>
+							<div>
+								<select onChange={(e) => handleFieldChange(e, 'city')}>
+									<option value="hamburg">Hamburg</option>
+									<option value="berlin">Berlin</option>
+									<option value="dresden">Dresden</option>
+									<option value="leipzig">Leipzig</option>
+								</select>
 							</div>
 						</div>
 

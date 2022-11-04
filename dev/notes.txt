@@ -8,12 +8,11 @@
 	- x start
 - x test with React Client
 	- x test get
-- .. show jobs on page with useEffect, axios
-- make handleSaveButton function
-	- post to backend
-	- reload with GET
-	
+- x show jobs on page with useEffect, axios
+- x make handleSaveButton function
+	- x post to backend
+	- x reload with GET
+	- x test post
+	- x test with Thunder Client
 
-	
-	- test post
-	- test with Thunder Client
+- .. make dropdown field: Berlin, Hamburg, Leibzip, Dresden
