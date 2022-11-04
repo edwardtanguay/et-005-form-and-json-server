@@ -2,3 +2,13 @@
 
 ### GET JOBS
 GET {{url}}/jobs
+
+### POST JOB
+POST {{url}}/jobs
+content-type: application/json
+
+{
+	"jobTitle": "Vue.js Developer",
+	"description": "Requires vue.js skills."
+}
+

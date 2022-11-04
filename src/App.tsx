@@ -1,13 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.scss';
+import axios from 'axios';
+
+interface IJob {
+	id: number;
+	jobTitle: string;
+	description: string;
+}
 
 const _formData = {
 	jobTitle: '',
 	description: '',
 };
 
+const backendUrl = 'http://localhost:5557';
+
 function App() {
 	const [formData, setFormData] = useState(_formData);
+	const [jobs, setJobs] = useState<IJob[]>([]);
+
+	useEffect(() => {
+		(async () => {
+			const response = await axios.get(`${backendUrl}/jobs`);
+			const _jobs = response.data;
+			setJobs(_jobs);
+		})();
+	}, []);
 
 	const handleFieldChange = (e: any, fieldName: string) => {
 		const value = e.target.value;
@@ -22,6 +40,11 @@ function App() {
 		}
 		setFormData({ ...formData });
 	};
+
+	const handleSaveForm = (e: any) => {
+		e.preventDefault();
+		
+	}
 
 	return (
 		<div className="App">
@@ -58,10 +81,21 @@ function App() {
 						</div>
 
 						<div className="buttonRow">
-							<button>Save</button>
+							<button onClick={(e) => handleSaveForm(e)}>Save</button>
 						</div>
 					</fieldset>
 				</form>
+
+				<div className="currentJobs">
+					<h2>There are {jobs.length} jobs:</h2>
+					{jobs.map(job => {
+						return (
+							<div className="job" key={job.id}>
+								<div className="title">{job.jobTitle}</div>
+							</div>
+						)
+					})}
+				</div>
 
 				<div className="debuggingArea">
 					<pre>{JSON.stringify(formData, null, 2)}</pre>

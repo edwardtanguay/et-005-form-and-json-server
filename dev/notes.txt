@@ -2,14 +2,18 @@
 - x install json-server
 - x create db.json
 	- x fill with 2 jobs
-- .. set up package.json scripts
-	- frontend
-	- backend
-	- start
-- test with React Client
-	- test get
-	- test post
-	- test with Thunder Client
+- x set up package.json scripts
+	- x frontend
+	- x backend
+	- x start
+- x test with React Client
+	- x test get
+- .. show jobs on page with useEffect, axios
 - make handleSaveButton function
 	- post to backend
 	- reload with GET
+	
+
+	
+	- test post
+	- test with Thunder Client

@@ -1,12 +1,19 @@
 {
-	"jobs": [
-		{
-			"jobTitle": "React Developer",
-			"description": "This is a good React job."
-		},
-		{
-			"jobTitle": "Angular Developer",
-			"description": "This job is with Angular."
-		}
-	]
+  "jobs": [
+    {
+      "id": 1,
+      "jobTitle": "React Developer",
+      "description": "This is a good React job."
+    },
+    {
+      "id": 2,
+      "jobTitle": "Angular Developer",
+      "description": "This job is with Angular."
+    },
+    {
+      "jobTitle": "Vue.js Developer",
+      "description": "Requires vue.js skills.",
+      "id": 3
+    }
+  ]
 }
