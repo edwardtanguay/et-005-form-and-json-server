@@ -9,6 +9,12 @@ const _formData = {
 function App() {
 	const [formData, setFormData] = useState(_formData);
 
+	const handleFieldChange = (e:any, fieldName: string) => {
+		const value = e.target.value;
+		formData.jobTitle = value;
+		setFormData({...formData});
+	}
+
 	return (
 		<div className="App">
 			<h1>Job Site</h1>
@@ -20,7 +26,7 @@ function App() {
 						<div className="row">
 							<label>Job Title</label>
 							<div>
-								<input type="text" />
+								<input value={formData.jobTitle} onChange={(e) => handleFieldChange(e, 'jobTitle')} type="text" />
 							</div>
 						</div>
 
