@@ -19,12 +19,14 @@ function App() {
 	const [formData, setFormData] = useState(_formData);
 	const [jobs, setJobs] = useState<IJob[]>([]);
 
+	const getJobs = async () => {
+		const response = await axios.get(`${backendUrl}/jobs`);
+		const _jobs = response.data;
+		setJobs(_jobs);
+	};
+
 	useEffect(() => {
-		(async () => {
-			const response = await axios.get(`${backendUrl}/jobs`);
-			const _jobs = response.data;
-			setJobs(_jobs);
-		})();
+		getJobs();
 	}, []);
 
 	const handleFieldChange = (e: any, fieldName: string) => {
@@ -43,8 +45,13 @@ function App() {
 
 	const handleSaveForm = (e: any) => {
 		e.preventDefault();
-		
-	}
+		(async () => {
+			const response = await axios.post(`${backendUrl}/jobs`, formData);
+			getJobs();
+			formData.jobTitle = '';
+			formData.description = '';
+		})();
+	};
 
 	return (
 		<div className="App">
@@ -81,19 +88,21 @@ function App() {
 						</div>
 
 						<div className="buttonRow">
-							<button onClick={(e) => handleSaveForm(e)}>Save</button>
+							<button onClick={(e) => handleSaveForm(e)}>
+								Save
+							</button>
 						</div>
 					</fieldset>
 				</form>
 
 				<div className="currentJobs">
 					<h2>There are {jobs.length} jobs:</h2>
-					{jobs.map(job => {
+					{jobs.map((job) => {
 						return (
 							<div className="job" key={job.id}>
 								<div className="title">{job.jobTitle}</div>
 							</div>
-						)
+						);
 					})}
 				</div>
 
