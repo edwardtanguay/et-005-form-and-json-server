@@ -1,39 +1,19 @@
 {
   "jobs": [
     {
-      "id": 1,
-      "jobTitle": "React Developer",
-      "description": "This is a good React job."
-    },
-    {
-      "id": 2,
-      "jobTitle": "Angular Developer",
-      "description": "This job is with Angular."
+      "jobTitle": "PHP Developer",
+      "description": "sdfkjsdf",
+      "id": 2
     },
     {
       "jobTitle": "Vue.js Developer",
       "description": "Requires vue.js skills.",
-      "id": 3
+      "id": 4
     },
     {
-      "jobTitle": "Rust Developer",
-      "description": "ksdjfksdf",
-      "id": 6
-    },
-    {
-      "jobTitle": "C# Developer",
-      "description": "skdjfskdf",
-      "id": 7
-    },
-    {
-      "jobTitle": "Haskell Developer",
-      "description": "skdjff",
-      "id": 8
-    },
-    {
-      "jobTitle": "Scala Developer",
-      "description": "sdkjfsdf",
-      "id": 9
+      "jobTitle": "Vue.js Developer",
+      "description": "Requires vue.js skills.",
+      "id": 5
     }
   ]
 }

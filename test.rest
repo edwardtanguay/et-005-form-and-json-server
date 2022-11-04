@@ -3,6 +3,9 @@
 ### GET JOBS
 GET {{url}}/jobs
 
+### GET ONE JOB
+GET {{url}}/jobs/1
+
 ### POST JOB
 POST {{url}}/jobs
 content-type: application/json
@@ -12,3 +15,5 @@ content-type: application/json
 	"description": "Requires vue.js skills."
 }
 
+### DELETE JOB
+DELETE {{url}}/jobs/3
