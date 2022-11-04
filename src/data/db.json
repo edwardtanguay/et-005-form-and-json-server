@@ -1,0 +1,12 @@
+{
+	"jobs": [
+		{
+			"jobTitle": "React Developer",
+			"description": "This is a good React job."
+		},
+		{
+			"jobTitle": "Angular Developer",
+			"description": "This job is with Angular."
+		}
+	]
+}
